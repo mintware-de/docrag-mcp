@@ -1,0 +1,68 @@
+{
+  "name": "docrag-mcp",
+  "version": "0.1.0",
+  "description": "Local RAG over markdown documents, exposed as an MCP server. OpenAI-compatible embeddings (Ollama, LM Studio), vector search via sqlite-vec.",
+  "license": "MIT",
+  "author": "Julian Finkler <julian@mintware.de>",
+  "homepage": "https://github.com/mintware-de/docrag-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mintware-de/docrag-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mintware-de/docrag-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "rag",
+    "retrieval-augmented-generation",
+    "embeddings",
+    "vector-search",
+    "sqlite",
+    "sqlite-vec",
+    "ollama",
+    "lm-studio",
+    "openai",
+    "markdown",
+    "claude",
+    "claude-desktop",
+    "cli"
+  ],
+  "type": "module",
+  "bin": {
+    "docrag-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20 <25"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test \"test/**/*.test.ts\"",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "better-sqlite3": "^13.0.3",
+    "sqlite-vec": "^0.1.9",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.0.0",
+    "tsdown": "^0.23.4",
+    "tsx": "^4.23.15",
+    "typescript": "^5.5.0"
+  }
+}

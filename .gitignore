@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.tgz
+docrag.log
+doc-rag.log
+docrag.db
+docrag.config.json
+.DS_Store
+.idea/
+secrets/
